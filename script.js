@@ -1,6 +1,6 @@
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-/* â”€â”€ Floating formulas background â”€â”€ */
+/* ---- Floating formulas background ---- */
 const mathBg = document.getElementById('math-bg');
 const symbols = ['f(x)','∑','∫','∂','∇','θ','π','μ','σ','λ','∞','√','≈','≠','∈','∀','∃','log','exp','sin','cos','tan','Δ','α','β','γ','ε','ω','∏','⊕','∩'];
 
@@ -29,7 +29,7 @@ if (mathBg && !reducedMotionQuery.matches) {
   }, 900);
 }
 
-/* â”€â”€ Scroll progress â”€â”€ */
+/* ---- Scroll progress ---- */
 const progressBar = document.getElementById('progress');
 function updateProgress() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -38,7 +38,7 @@ function updateProgress() {
 window.addEventListener('scroll', updateProgress, { passive: true });
 updateProgress();
 
-/* â”€â”€ Mobile navigation â”€â”€ */
+/* ---- Mobile navigation ---- */
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.getElementById('primary-navigation');
 const mobileOverlay = document.getElementById('mobile-overlay');
@@ -62,7 +62,7 @@ if (navToggle && navLinks) {
   });
 }
 
-/* â”€â”€ Reveal on scroll â”€â”€ */
+/* ---- Reveal on scroll ---- */
 const revealTargets = document.querySelectorAll('.rv, .rv-l, .tl-item');
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver(entries => {
@@ -78,7 +78,7 @@ if ('IntersectionObserver' in window) {
   revealTargets.forEach(target => target.classList.add('visible'));
 }
 
-/* â”€â”€ Stat counters â”€â”€ */
+/* ---- Stat counters ---- */
 const statNumbers = document.querySelectorAll('.stat-num[data-target]');
 const counterObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -104,7 +104,7 @@ const counterObserver = new IntersectionObserver(entries => {
 }, { threshold: .4 });
 statNumbers.forEach(element => counterObserver.observe(element));
 
-/* â”€â”€ Timeline line animation â”€â”€ */
+/* ---- Timeline line animation ---- */
 const timeline = document.getElementById('timeline');
 if (timeline) {
   const timelineObserver = new IntersectionObserver(entries => {
@@ -118,7 +118,7 @@ if (timeline) {
   timelineObserver.observe(timeline);
 }
 
-/* â”€â”€ Stat panel modal â”€â”€ */
+/* ---- Stat panel modal ---- */
 const statOverlay = document.getElementById('stat-overlay');
 const statPanel = document.getElementById('stat-panel');
 const statPanelContent = document.getElementById('sp-content');
@@ -131,9 +131,9 @@ const panelData = {
   internships: {
     label: 'Internships',
     items: [
-      { name: 'AI-ML Intern', issuer: 'Blackbuck Engineers Pvt Ltd.', date: 'Jan â€“ Apr 2025', skills: ['OpenCV', 'Image Processing', 'Edge Detection', 'Python', 'Computer Vision'], highlight: ['OpenCV', 'Python'], certUrl: 'certificates/aiml-blackbuck.pdf' },
-      { name: 'Python Developer Intern', issuer: 'Codexintern', date: 'Oct â€“ Nov 2024', skills: ['Flask', 'REST API', 'CRUD Operations', 'Python', 'Backend Development'], highlight: ['Flask', 'Python'], certUrl: 'certificates/python-codexintern.pdf' },
-      { name: 'Machine Learning Intern', issuer: 'Codegnan Solutions', date: 'May â€“ Jun 2023', skills: ['Pandas', 'NumPy', 'Data Preprocessing', 'Scikit-learn', 'Python'], highlight: ['Pandas', 'NumPy'], certUrl: 'certificates/ml-codegnan.pdf' }
+      { name: 'AI-ML Intern', issuer: 'Blackbuck Engineers Pvt Ltd.', date: 'Jan – Apr 2025', skills: ['OpenCV', 'Image Processing', 'Edge Detection', 'Python', 'Computer Vision'], highlight: ['OpenCV', 'Python'], certUrl: 'certificates/aiml-blackbuck.pdf' },
+      { name: 'Python Developer Intern', issuer: 'Codexintern', date: 'Oct – Nov 2024', skills: ['Flask', 'REST API', 'CRUD Operations', 'Python', 'Backend Development'], highlight: ['Flask', 'Python'], certUrl: 'certificates/python-codexintern.pdf' },
+      { name: 'Machine Learning Intern', issuer: 'Codegnan Solutions', date: 'May – Jun 2023', skills: ['Pandas', 'NumPy', 'Data Preprocessing', 'Scikit-learn', 'Python'], highlight: ['Pandas', 'NumPy'], certUrl: 'certificates/ml-codegnan.pdf' }
     ]
   },
   certifications: {
@@ -143,11 +143,11 @@ const panelData = {
       { name: 'AI Fluency: Framework & Foundations', issuer: 'Anthropic', date: 'Apr 2026', skills: ['AI Fluency', 'Artificial Intelligence (AI)'], highlight: ['AI Fluency'], certUrl: 'certificates/ai-fluency.png' },
       { name: 'Python', issuer: 'HackerRank', date: 'Apr 2026', skills: ['Python (Programming Language)'], highlight: ['Python (Programming Language)'], certUrl: 'https://www.hackerrank.com/certificates/8661505875b8' },
       { name: 'Software Engineer', issuer: 'HackerRank', date: 'Apr 2026', skills: ['Software Development', 'Problem Solving'], highlight: ['Software Development'], certUrl: 'https://www.hackerrank.com/certificates/a9d712dbdfda' },
-      { name: 'Workshop Certification â€“ AI Design Workshop', issuer: 'Learn Worlds', date: 'May 2025', skills: ['Artificial Intelligence (AI)', 'Generative AI Tools'], highlight: ['Generative AI Tools'], certUrl: 'certificates/ai-design.pdf' },
+      { name: 'Workshop Certification – AI Design Workshop', issuer: 'Learn Worlds', date: 'May 2025', skills: ['Artificial Intelligence (AI)', 'Generative AI Tools'], highlight: ['Generative AI Tools'], certUrl: 'certificates/ai-design.pdf' },
       { name: 'Logical Reasoning', issuer: 'Lara Technologies Pvt Ltd', date: 'Mar 2025', skills: ['Logical Approach', 'Reasoning Skills', 'Analytical Thinking'], highlight: ['Logical Approach'], certUrl: 'certificates/Logical-reasoning.pdf' },
       { name: 'Foundations of Prompt Engineering', issuer: 'Amazon Web Services (AWS)', date: 'Feb 2025', skills: ['Prompt Engineering', 'Generative AI', 'AWS'], highlight: ['Prompt Engineering'], certUrl: 'certificates/prompt-engineering-aws.pdf' },
       { name: 'Deep Learning Course: Deep Dive into Deep Learning', issuer: 'Scaler', date: 'Nov 2024', skills: ['Deep Neural Networks (DNN)', 'Deep Learning', 'PyTorch', 'TensorFlow', 'Neural Networks'], highlight: ['Deep Learning', 'Deep Neural Networks (DNN)'], certUrl: 'certificates/deep-learning-scaler.pdf' },
-      { name: 'Google Play Academy â€“ Store Listing Certificate', issuer: 'United Latino Students Association', date: 'Nov 2024', skills: ['Google Play', 'App Development'], highlight: ['Google Play'], certUrl: 'https://www.credential.net/ae9feef1-3c59-48bf-a01a-82bb91658d66#acc.NGerauUX' },
+      { name: 'Google Play Academy – Store Listing Certificate', issuer: 'United Latino Students Association', date: 'Nov 2024', skills: ['Google Play', 'App Development'], highlight: ['Google Play'], certUrl: 'https://www.credential.net/ae9feef1-3c59-48bf-a01a-82bb91658d66#acc.NGerauUX' },
       { name: 'Machine Learning with Go', issuer: 'Infosys Springboard', date: 'Oct 2024', skills: ['Machine Learning Algorithms', 'Go (Programming Language)', 'ML Pipelines'], highlight: ['Machine Learning Algorithms', 'Go (Programming Language)'], certUrl: 'certificates/ml-with-go.pdf' },
       { name: 'Freedom With AI Masterclass', issuer: 'Freedom With AI', date: 'Sep 2024', skills: ['Artificial Intelligence (AI)', 'Prompt Engineering'], highlight: ['Prompt Engineering'], certUrl: 'certificates/freedom-ai-masterclass.pdf' },
       { name: 'AI for Students: Build Your Own Generative AI Model', issuer: 'NxtWave', date: 'Aug 2024', skills: ['Generative AI for Web Developers', 'LLMs', 'Python'], highlight: ['Generative AI for Web Developers'], certUrl: 'certificates/ai-for-students-nxtwave.jpg' },
@@ -166,7 +166,7 @@ const panelData = {
       { name: 'ChatGPT for Everyone', issuer: 'GUVI', date: 'Oct 2023', skills: ['ChatGPT for Web Developers', 'ChatGPT', 'Prompt Engineering'], highlight: ['ChatGPT'], certUrl: 'certificates/chatgpt-guvi.jpg' },
       { name: 'Tomcat Server Administration', issuer: 'Infosys Springboard', date: 'Oct 2023', skills: ['Tomcat Server Administration', 'Server Management', 'Java'], highlight: ['Tomcat Server Administration'], certUrl: 'certificates/tomcat-infosys.pdf' },
       { name: 'Data Science 101', issuer: 'IBM', date: 'Sep 2023', skills: ['Data Science', 'Python', 'Data Analysis'], highlight: ['Data Science'], certUrl: 'certificates/data-science-ibm.jpg' },
-      { name: 'TCS iON Career Edge â€“ Young Professional', issuer: 'TCS iON', date: 'Sep 2023', skills: ['Communication', 'Presentations', 'Business Acumen', 'Teamwork'], highlight: ['Communication', 'Presentations'], certUrl: 'certificates/tcs-ion-career.pdf' },
+      { name: 'TCS iON Career Edge – Young Professional', issuer: 'TCS iON', date: 'Sep 2023', skills: ['Communication', 'Presentations', 'Business Acumen', 'Teamwork'], highlight: ['Communication', 'Presentations'], certUrl: 'certificates/tcs-ion-career.pdf' },
       { name: 'SQL', issuer: 'HackerRank', date: 'Aug 2023', skills: ['SQL', 'MySQL', 'Query Optimization'], highlight: ['SQL', 'MySQL'], certUrl: 'https://www.hackerrank.com/certificates/8b7770eb0b70' },
       { name: 'CSS', issuer: 'HackerRank', date: 'Aug 2023', skills: ['Cascading Style Sheets (CSS)', 'Web Design', 'Responsive Layout'], highlight: ['Cascading Style Sheets (CSS)'], certUrl: 'https://www.hackerrank.com/certificates/d4df6bdc1b21' }
     ]
@@ -181,7 +181,7 @@ const panelData = {
   }
 };
 
-/* â”€â”€ Render a single item card (same as Meee portfolio) â”€â”€ */
+/* ---- Render a single item card (same as Meee portfolio) ---- */
 function renderItem(item, isProject) {
   const article = document.createElement('article');
   article.className = 'sp-item';
@@ -190,7 +190,7 @@ function renderItem(item, isProject) {
     return `<span class="sp-skill${isHL ? ' hl' : ''}">${s}</span>`;
   }).join('');
 
-  const btnLabel = isProject ? 'âŽ‡ View on GitHub â†’' : 'ðŸŽ“ View Certificate â†’';
+  const btnLabel = isProject ? 'View on GitHub →' : 'View Certificate →';
   const linkUrl = isProject && item.githubUrl ? item.githubUrl : item.certUrl;
   const btnHtml = linkUrl
     ? `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="sp-view-btn" style="cursor:pointer;">
@@ -207,7 +207,7 @@ function renderItem(item, isProject) {
       </div>
       <div class="sp-item-right">
         <div class="sp-item-date">${item.date}</div>
-        <div class="sp-item-badge">âœ“ Earned</div>
+        <div class="sp-item-badge">Earned</div>
       </div>
     </div>
     <div class="sp-skills">${skillsHtml}</div>
@@ -253,7 +253,7 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !statPanel.hidden) closeStatPanel();
 });
 
-/* â”€â”€ Project drawers â”€â”€ */
+/* ---- Project drawers ---- */
 function setCardState(card, button, drawer, open) {
   button.setAttribute('aria-expanded', String(open));
   drawer.setAttribute('aria-hidden', String(!open));
@@ -286,14 +286,14 @@ document.querySelectorAll('.proj-card').forEach(card => {
   });
 });
 
-/* â”€â”€ GitHub contribution year label â”€â”€ */
+/* ---- GitHub contribution year label ---- */
 const ghYear = document.getElementById('gh-year');
 if (ghYear) {
   const now = new Date();
-  ghYear.textContent = `Last 12 months (${now.toLocaleString('en-US', { month: 'short' })} ${now.getFullYear() - 1} â†’ ${now.toLocaleString('en-US', { month: 'short' })} ${now.getFullYear()})`;
+  ghYear.textContent = `Last 12 months (${now.toLocaleString('en-US', { month: 'short' })} ${now.getFullYear() - 1} → ${now.toLocaleString('en-US', { month: 'short' })} ${now.getFullYear()})`;
 }
 
-/* â”€â”€ Project card tilt â”€â”€ */
+/* ---- Project card tilt ---- */
 const finePointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
 if (finePointerQuery.matches && !reducedMotionQuery.matches) {
   document.querySelectorAll('[data-tilt]').forEach(card => {
