@@ -1,0 +1,10 @@
+{
+  "name": "bhuvaneswari-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio verification commands",
+  "scripts": {
+    "test": "node --check script.js && node tests/verify.mjs",
+    "verify": "npm test"
+  }
+}

@@ -1,0 +1,8 @@
+#sparkle-cursor {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 10001; pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  #sparkle-cursor { display: none; }
+}

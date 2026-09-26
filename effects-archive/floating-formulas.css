@@ -1,0 +1,22 @@
+#math-bg {
+  position: fixed; inset: 0; z-index: -1;
+  pointer-events: none; overflow: hidden;
+}
+
+.math-symbol {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(125,249,255,.18);
+  user-select: none;
+  animation: formula-flow linear infinite;
+}
+
+@keyframes formula-flow {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  8%, 92% { opacity: .45; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #math-bg { display: none; }
+}
