@@ -15,6 +15,7 @@ const publicFiles = [
   'og.png',
   'leetcode-logo.png',
   'hackerrank-logo.png',
+  'hf-logo.svg',
   'certificates'
 ];
 
