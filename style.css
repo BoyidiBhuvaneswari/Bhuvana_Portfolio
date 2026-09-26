@@ -118,7 +118,8 @@ h2.sec-title { font-family: 'Clash Display', sans-serif; font-size: clamp(2rem,5
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #math-bg { display: none; }
+  #math-bg { opacity: .72; }
+  .math-symbol { animation: none; opacity: .7; transform: none; }
 }
 
 /* ── Hero Section ── */
@@ -793,7 +794,7 @@ a, button { cursor: pointer; }
   section { padding-left: 1.1rem; padding-right: 1.1rem; }
 
   /* ── Math symbols: quieter on mobile so text stays readable ── */
-  #math-bg { opacity: .18; }
+  #math-bg { opacity: .68; }
   .math-symbol { font-size: .75rem !important; text-shadow: none; }
 }
 

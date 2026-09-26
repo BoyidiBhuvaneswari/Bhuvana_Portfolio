@@ -2,7 +2,7 @@ const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
 
 /* ---- Floating formulas background ---- */
 const mathBg = document.getElementById('math-bg');
-const symbols = ['f(x)','∑','∫','∂','∇','θ','π','μ','σ','λ','∞','√','≈','≠','∈','∀','∃','log','exp','sin','cos','tan','Δ','α','β','γ','ε','ω','∏','⊕','∩'];
+const symbols = ['f(x)','∑','∫','∂','∇','θ','π','μ','σ','λ','∞','√','≈','≠','∈','∀','∃','log','exp','sin','cos','tan','Δ','α','β','γ','ε','ω','∏','∩'];
 
 function createSymbol(startMidScreen) {
   const symbol = document.createElement('div');
@@ -21,12 +21,26 @@ function createSymbol(startMidScreen) {
   window.setTimeout(() => symbol.remove(), (duration + 1) * 1000);
 }
 
-if (mathBg && !reducedMotionQuery.matches) {
-  const initialCount = window.innerWidth < 600 ? 8 : 14;
-  for (let index = 0; index < initialCount; index++) createSymbol(true);
-  window.setInterval(() => {
-    if (!document.hidden && mathBg.childElementCount < 18) createSymbol(false);
-  }, 900);
+if (mathBg) {
+  if (reducedMotionQuery.matches) {
+    for (let index = 0; index < 6; index++) {
+      const symbol = document.createElement('div');
+      symbol.className = 'math-symbol';
+      symbol.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+      symbol.style.left = `${Math.random() * 100}vw`;
+      symbol.style.fontSize = `${Math.random() * .6 + .7}rem`;
+      symbol.style.top = `${Math.random() * 90}vh`;
+      symbol.style.opacity = '';
+      symbol.style.animation = 'none';
+      mathBg.appendChild(symbol);
+    }
+  } else {
+    const initialCount = window.innerWidth < 600 ? 12 : 20;
+    for (let index = 0; index < initialCount; index++) createSymbol(true);
+    window.setInterval(() => {
+      if (!document.hidden && mathBg.childElementCount < 25) createSymbol(false);
+    }, 900);
+  }
 }
 
 /* ---- Scroll progress ---- */
