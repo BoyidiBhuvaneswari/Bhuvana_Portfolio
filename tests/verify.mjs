@@ -26,7 +26,7 @@ check(/class="skip-link"\s+href="#main-content"/.test(html), 'A skip link is req
 check(/class="nav-toggle"[^>]+aria-controls="primary-navigation"[^>]+aria-expanded="false"/.test(html), 'The mobile navigation button must expose its controlled menu and state.');
 check(/id="stat-panel"[^>]+role="dialog"[^>]+aria-modal="true"[^>]+aria-labelledby="sp-title"/.test(html), 'The details panel must be an accessible modal dialog.');
 check((html.match(/class="stat-card"/g) ?? []).length === 3, 'All three statistic cards must be present.');
-check((html.match(/class="proj-name-bar proj-toggle"/g) ?? []).length === 5, 'All five project drawers must have buttons.');
+check((html.match(/class="proj-name-bar proj-toggle"/g) ?? []).length === 6, 'All six project drawers must have buttons.');
 check(/ps-card cc[\s\S]*?ps-stat-lbl">Rating</.test(html), 'CodeChef currentRating must be labelled Rating.');
 
 for (const tag of html.match(/<a\b[^>]*target="_blank"[^>]*>/g) ?? []) {
